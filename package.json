@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/ERiverIllini/TickTask/issues"
   },
-  "homepage": "https://github.com/ERiverIllini/TickTask#readme"
+  "homepage": "https://github.com/ERiverIllini/TickTask#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.4"
+  }
 }
