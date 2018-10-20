@@ -4,3 +4,8 @@ Start server
 ```javascript
 npm run server
 ```
+
+Install Dependencies
+```javascript
+npm i mongoose express body-parser
+```

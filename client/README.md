@@ -1,3 +1,7 @@
+```javascript
+npm i bootstrap reactstrap react-transition-group react-sidebar
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
