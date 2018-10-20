@@ -1,0 +1,37 @@
+.App{
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 100, 255);
+}
+.SideBar{
+  background: white;
+  display: inline-block;
+}
+.Task{
+  height: 50%;
+  background: purple;
+  overflow-y: scroll;
+}
+.Additional{
+  height: 50%;
+  background: peru;
+  overflow-y: scroll;
+}
+
+.remove-btn {
+  margin-right: 0.5rem;
+}
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
