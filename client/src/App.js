@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {Container, ListGroup, ListGroupItem, ListGroupItemHeading} from 'reactstrap';
 import Sidebar from 'react-sidebar';
 
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import TaskList from './components/TaskList';
 
 
 const mql = window.matchMedia(`(min-width: 800px)`);
@@ -59,38 +60,17 @@ class App extends Component {
 						</ListGroup>}
 					open={this.state.sidebarOpen}
 					docked={this.state.sidebarDocked}
-					onSetOpen={this.onSetSidebarOpen}>	
+					onSetOpen={this.onSetSidebarOpen}
+					// shadow={false}
+					>	
 					</Sidebar>
 				</Container>
 				<Container className="Task">
 				<h2>Task Assignerç</h2>
-					<ul>
-						<li>1</li> <li>2</li> <li>3</li>
-						<li>4</li> <li>5</li> <li>6</li>
-						<li>7</li> <li>8</li> <li>9</li>
-						<li>1</li> <li>2</li> <li>3</li>
-						<li>4</li> <li>5</li> <li>6</li>
-						<li>7</li> <li>8</li> <li>9</li>
-						<li>1</li> <li>2</li> <li>3</li>
-						<li>4</li> <li>5</li> <li>6</li>
-						<li>7</li> <li>8</li> <li>9</li>
-						<li>7</li> <li>8</li> <li>9</li><li>7</li> <li>8</li> <li>9</li><li>7</li> <li>8</li> <li>9</li><li>7</li> <li>8</li> <li>9</li>
-					</ul>
+				<TaskList />
 				</Container>
 				<Container className="Additional">
-					<h1>Hello</h1>
-						<ul>	
-							<li>1</li> <li>2</li> <li>3</li>
-							<li>4</li> <li>5</li> <li>6</li>
-							<li>7</li> <li>8</li> <li>9</li>
-							<li>1</li> <li>2</li> <li>3</li>
-							<li>4</li> <li>5</li> <li>6</li>
-							<li>7</li> <li>8</li> <li>9</li>
-							<li>1</li> <li>2</li> <li>3</li>
-							<li>4</li> <li>5</li> <li>6</li>
-							<li>7</li> <li>8</li> <li>9</li>
-							<li>7</li> <li>8</li> <li>9</li><li>7</li> <li>8</li> <li>9</li><li>7</li> <li>8</li> <li>9</li><li>7</li> <li>8</li> <li>9</li>
-						</ul>
+					<h1>Calendar</h1>
 				</Container>
 			</div>
 		);
