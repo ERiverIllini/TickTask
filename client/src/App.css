@@ -1,7 +1,11 @@
+@import "palette.css";
+
 .App{
   width: 100vw;
   height: 100vh;
-  background: rgb(255, 100, 255);
+  background: #607D8B;
+  color: #212121;
+  border-color: #BDBDBD;
 }
 .SideBar{
   background: white;
@@ -9,12 +13,12 @@
 }
 .Task{
   height: 50%;
-  background: purple;
+  background: #455A64;
   overflow-y: scroll;
 }
 .Additional{
   height: 50%;
-  background: peru;
+  background: #455A64;
   overflow-y: scroll;
 }
 

@@ -7,7 +7,7 @@ import './App.css';
 import TaskList from './components/TaskList';
 
 
-const mql = window.matchMedia(`(min-width: 800px)`);
+const mql = window.matchMedia(`(min-width: 1000px)`);
 
 
 class App extends Component {
@@ -61,7 +61,7 @@ class App extends Component {
 					open={this.state.sidebarOpen}
 					docked={this.state.sidebarDocked}
 					onSetOpen={this.onSetSidebarOpen}
-					// shadow={false}
+					shadow={false}
 					>	
 					</Sidebar>
 				</Container>
