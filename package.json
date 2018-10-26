@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ERiverIllini/TickTask/issues"
   },
-  "homepage": "https://github.com/ERiverIllini/TickTask#readme"
+  "homepage": "https://github.com/ERiverIllini/TickTask#readme",
+  "dependencies": {
+    "google-auth-library": "^1.0.0",
+    "googleapis": "^27.0.0"
+  }
 }
