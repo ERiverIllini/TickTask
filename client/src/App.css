@@ -20,6 +20,10 @@ body{
   padding-bottom: 2rem
 }
 .Additional{
+<<<<<<< HEAD
+=======
+  height: 45%;
+>>>>>>> Experimented with CSS for front page
   background: #455A64;
   overflow-y: scroll;
 }
@@ -56,7 +60,11 @@ body{
   position: relative;
 
   display: block;
+<<<<<<< HEAD
   margin: 5px auto;
+=======
+  margin: 30px auto;
+>>>>>>> Experimented with CSS for front page
   padding: 0;
   width: 75%;
   overflow: hidden;
