@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, ListGroup, ListGroupItem, ListGroupItemHeading} from 'reactstrap';
+import {Container, ListGroup, ListGroupItem, ListGroupItemHeading, Button} from 'reactstrap';
 import Sidebar from 'react-sidebar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +7,7 @@ import './App.css';
 import TaskList from './components/TaskList';
 
 
-const mql = window.matchMedia(`(min-width: 1000px)`);
+const mql = window.matchMedia(`(min-width: 750px)`);
 
 
 class App extends Component {
@@ -49,7 +49,8 @@ class App extends Component {
 					sidebar={
 						<ListGroup>
 							<ListGroupItemHeading><h1>Menu</h1></ListGroupItemHeading>
-							<ListGroupItemHeading>Calendar</ListGroupItemHeading>
+							<Button className = "side-bar-btn">Calendar</Button>
+							<Button className = "side-bar-btn">Tasks</Button>
 							<ListGroupItemHeading>Tasks</ListGroupItemHeading>
 							<ListGroup>
 								<ListGroupItemHeading>Classes</ListGroupItemHeading>
@@ -83,4 +84,11 @@ export default App;
 TODO Add 3 seperate containers
 TODO Add Sidebar CSS
 TODO Add Sidebar functionality
+*/
+
+/*
+Background color
+Category buttons
+Checkbox buttons left side 
+Checkbox buttons fill box
 */
