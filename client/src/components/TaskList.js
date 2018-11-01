@@ -25,9 +25,10 @@ class TaskList extends Component {
                 {tasks.map(({ id, name }) => (
                   <CSSTransition key={id} timeout={500} classNames="fade">
                     <ListGroupItem>
+                      {name}
                       <Button
-                        className="remove-btn"
-                        color="danger"
+                        className="remove-btn float-right"
+                        color="success"
                         size="sm"
                         onClick={() => {
                           this.setState(state => ({
@@ -37,7 +38,6 @@ class TaskList extends Component {
                       >
                         &times;
                       </Button>
-                      {name}
                     </ListGroupItem>
                   </CSSTransition>
                 ))}
