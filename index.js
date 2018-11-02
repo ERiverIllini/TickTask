@@ -11,11 +11,11 @@ var event = {
   'location': '800 Howard St., San Francisco, CA 94103',
   'description': 'A chance to hear more about Google\'s developer products.',
   'start': {
-    'dateTime': '2015-05-28T09:00:00-07:00',
+    'dateTime': '2018-11-03T09:00:00-07:00',
     'timeZone': 'America/Los_Angeles',
   },
   'end': {
-    'dateTime': '2015-05-28T17:00:00-07:00',
+    'dateTime': '2018-11-03T17:00:00-07:00',
     'timeZone': 'America/Los_Angeles',
   },
   'recurrence': [
@@ -33,7 +33,6 @@ var event = {
     ],
   },
 };
-
 // Load client secrets from a local file.
 fs.readFile('credentials.json', (err, content) => {
   if (err) return console.log('Error loading client secret file:', err);
@@ -122,13 +121,13 @@ function listEvents(auth) {
  * Adds an event to google calendar at a specific time and date
  * @param {google.auth.OAuth2} auth An authorizd OAuth2 client.
  */
-function addEvent(auth, event) {
+function addEvent(auth) {
    const calendar = google.calendar({version: 'v3', auth});
    calendar.events.insert({
      auth: auth,
      calendarId: 'primary',
      resource: event,
-    }, (err, res) => {
+    }, function(err, event) {
     if (err) {
       console.log('There was an error contacting the Calendar service: ' + err);
       return;
