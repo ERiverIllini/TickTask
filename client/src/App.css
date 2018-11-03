@@ -61,10 +61,14 @@ body{
 
   display: block;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 5px auto;
 =======
   margin: 30px auto;
 >>>>>>> Experimented with CSS for front page
+=======
+  margin: 5px auto;
+>>>>>>> Moved sidebar to a seperate component
   padding: 0;
   width: 75%;
   overflow: hidden;
