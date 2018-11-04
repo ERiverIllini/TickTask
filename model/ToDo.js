@@ -37,17 +37,17 @@ const TaskSchema = new Schema({
     }
 });
 
-TaskSchema.method.getPriority = function setPriority(TaskSchema) {
+TaskSchema.method.getPriority = function setPriority(cb) {
     var Task = mongoose.model('Task', this);
     var timePoint, datePoint, difPoint, perPoint, corePoint, intPoint, predPoint;
     var count = 0;
     datePoint = Math.pow(2, this.get('dateDue') - Date.now)
-    if (Task.get('timeNeed') != -1) ({
-        timePoint = Task.get('timeNeed'),
+    if (this.timeNeed != -1) ({
+        timePoint = this.timeNeed,
         count = count + 0.8
     })
-    if (Task.get('difficulty') != -1) ({
-        timePoint = Task.get('difficulty'),
+    if (this.difficulty != -1) ({
+        timePoint = this.difficulty,
         count = count + 0.5
     })
     if (Task.get('percent') != -1) ({
