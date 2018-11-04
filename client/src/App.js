@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {Container, ListGroup, ListGroupItem, ListGroupItemHeading, Button} from 'reactstrap';
 
+<<<<<<< HEAD
 import Sidebar from 'react-sidebar';
+=======
+>>>>>>> 073153d5730836fcb4a8e3b8ccc48c57c47a1f7a
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -18,7 +21,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 073153d5730836fcb4a8e3b8ccc48c57c47a1f7a
 				<Container  className="SideBar">
 				<SideBar />
 				</Container>
