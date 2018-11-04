@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import {Container, ListGroup, ListGroupItem, ListGroupItemHeading, Button} from 'reactstrap';
 
-<<<<<<< HEAD
-import Sidebar from 'react-sidebar';
-=======
->>>>>>> 073153d5730836fcb4a8e3b8ccc48c57c47a1f7a
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import TaskList from './components/TaskList';
@@ -16,15 +11,10 @@ import SideBar from './components/SideBar';
 
 class App extends Component {
 
-	
 
 	render() {
 		return (
 			<div className="App">
-<<<<<<< HEAD
-				
-=======
->>>>>>> 073153d5730836fcb4a8e3b8ccc48c57c47a1f7a
 				<Container  className="SideBar">
 				<SideBar />
 				</Container>
@@ -55,7 +45,6 @@ Category buttons
 Checkbox buttons left side 
 Checkbox buttons fill box
 */
-
 /*
 Add button
 Google calendar
