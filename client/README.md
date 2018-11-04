@@ -1,6 +1,8 @@
+
 ```javascript
-npm i bootstrap reactstrap react-transition-group react-sidebar
+npm i bootstrap reactstrap react-transition-group react-sidebar redux react-redux redux-thunk
 ```
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
