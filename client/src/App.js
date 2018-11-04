@@ -48,16 +48,10 @@ Background color
 Category buttons
 Checkbox buttons left side 
 Checkbox buttons fill box
-<<<<<<< HEAD
-<<<<<<< HEAD
 */
+
 /*
 Add button
 Google calendar
 Call priority function and sort tasks
-=======
->>>>>>> Experimented with CSS for front page
-=======
-Add button
->>>>>>> Moved sidebar to a seperate component
 */

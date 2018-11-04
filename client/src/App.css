@@ -21,9 +21,12 @@ body{
 }
 .Additional{
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   height: 45%;
 >>>>>>> Experimented with CSS for front page
+=======
+>>>>>>> Created add button, which adds to the list
   background: #455A64;
   overflow-y: scroll;
 }
