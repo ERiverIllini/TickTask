@@ -20,6 +20,21 @@ class TaskList extends Component {
         const { tasks } = this.state;
         return (
           <Container>
+            <Button
+              color="dark"
+              style={{marginBottom: '2rem'}}
+              className = "side-bar-btn"
+              onClick={() => {
+                const name = prompt('Enter Task');
+                if(name) {
+                  this.setState(state => ({
+                    tasks: [...state.tasks, { id: uuid(), name}]
+                  }));
+                }
+              }}
+            >
+              Add Item
+            </Button>
             <ListGroup>
               <TransitionGroup className="shopping-list">
                 {tasks.map(({ id, name }) => (

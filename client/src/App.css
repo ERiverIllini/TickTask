@@ -20,9 +20,16 @@ body{
   padding-bottom: 2rem
 }
 .Additional{
-  height: 45%;
   background: #455A64;
   overflow-y: scroll;
+}
+
+.Calendar{
+  border-width:0; 
+  width:100%;
+  height:600px;
+  mask-border:0;
+  isolation:no;
 }
 
 .remove-btn {
