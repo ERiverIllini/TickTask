@@ -93,7 +93,7 @@ var Task = mongoose.model('Task', TaskSchema);
 
 //Sample Task
 var dog = new Task({
-    name: "math",
+    name: "dog",
     dateDue: new Date(2018, 11, 10),
     timeNeed: 2,
     difficulty: 1,
@@ -102,6 +102,30 @@ var dog = new Task({
     interest: 4,
     predictable: 9
 });
+
+var cat = new Task({
+    name: "cat",
+    dateDue: new Date(2018, 11, 10),
+    timeNeed: 5,
+    difficulty: 5,
+    percent: 5,
+    core: 9,
+    interest: 5,
+    predictable: 9
+});
+
+var fish = new Task({
+    name: "fish",
+    dateDue: new Date(2018, 11, 10),
+    timeNeed: 1,
+    difficulty: 1,
+    percent: 1,
+    core: 1,
+    interest: 1,
+    predictable: 9
+});
+
+var items = [dog, cat];
 
 function getPriority (item) {
     //Points out of 10 for each variable
@@ -163,6 +187,25 @@ function getPriority (item) {
      return priority;
 }
 
+//Sets up priority property in schema
 getPriority(dog);
+getPriority(cat);
 
-module.exports = ToDo = mongoose.model('todo', TaskSchema)
+//Inserts from lowest priority to highest
+function insert (taskArray, newTask) {
+    var priority = getPriority(newTask);
+    for (var i = 0; i < taskArray.length; i++) {
+        var instPriority = getPriority(taskArray[i]);
+        if (instPriority > priority) {
+            taskArray.splice(i,0,newTask);
+            return;
+        }
+    }
+    taskArray.push(newTask);
+}
+
+//Tests
+insert(items, fish);
+//console.log(items[0].priority);
+//console.log(items[1].priority);
+//console.log(items[2].priority);
