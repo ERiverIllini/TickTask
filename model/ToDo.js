@@ -91,8 +91,10 @@ var Task = mongoose.model('Task', TaskSchema);
 //      return priority;
 //  }
 
+//Sample Task
 var dog = new Task({
     name: "math",
+    dateDue: new Date(2018, 11, 10),
     timeNeed: 2,
     difficulty: 1,
     percent: 5,
@@ -102,9 +104,16 @@ var dog = new Task({
 });
 
 function getPriority (item) {
+    //Points out of 10 for each variable
     var timePoint, datePoint, difPoint, perPoint, corePoint, intPoint, predPoint;
     var count = 0;
-    datePoint = 10
+    var d = new Date();
+    //Choosing date constant based on how many days away it is.
+    if (item.dateDue.getDate() - d.getDate() > 10 || item.dateDue.getDate() - d.getDate() < 0) {
+        datePoint = 1;
+    } else {
+        datePoint = 10 - item.dateDue.getDate() + d.getDate();
+    }
     if (item.timeNeed != -1) {
         timePoint = item.timeNeed,
         count = count + 0.8
@@ -126,9 +135,10 @@ function getPriority (item) {
          count = count + 0.9
      }
      if (item.predictable != -1) {
-         predPoint = item.predictable,
+         predPoint = 10 - item.predictable,
          count = count + 0.3
      }
+     //Does the math
      var dateConst = 1.0/(count + 1);
      var priority = dateConst*datePoint;
      if (item.timeNeed != -1) {
@@ -148,13 +158,11 @@ function getPriority (item) {
      }
      if (item.predictable != -1) {
          priority = priority + predPoint*dateConst*0.16
-         console.log(priority)
      }
      item.priority = priority;
-     console.log(priority);
      return priority;
 }
-  
+
 getPriority(dog);
 
 module.exports = ToDo = mongoose.model('todo', TaskSchema)
