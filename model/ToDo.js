@@ -9,7 +9,7 @@ const TaskSchema = new Schema({
     },
     dateDue: {
         type: Date,
-        default: Date.now + 86400000
+        default: Date.now
     },
     timeNeed: {
         type: Number,
@@ -37,55 +37,124 @@ const TaskSchema = new Schema({
     }
 });
 
-TaskSchema.method.getPriority = function setPriority(TaskSchema) {
-    var Task = mongoose.model('Task', this);
+var Task = mongoose.model('Task', TaskSchema);
+
+// TaskSchema.methods.getPriority = function getPriority(cb) {
+//      var timePoint, datePoint, difPoint, perPoint, corePoint, intPoint, predPoint;
+//      var count = 0;
+//      datePoint = Math.pow(2, this.dateDue - Date.now)
+//      if (this.timeNeed != -1) ({
+//          timePoint = this.timeNeed,
+//          count = count + 0.8
+//      })
+//      if (this.difficulty != -1) ({
+//          difPoint = this.difficulty,
+//          count = count + 0.5
+//      })
+//      if (this.percent != -1) ({
+//          perPoint = this.percent,
+//          count = count + 0.8
+//      })
+//      if (this.core != -1) ({
+//          corePoint = this.core,
+//          count = count + 0.3
+//      })
+//      if (this.interest != -1) ({
+//          intPoint = this.interest,
+//          count = count + 0.9
+//      })
+//      if (this.predictable != -1) ({
+//          perPoint = this.predictable,
+//          count = count + 0.3
+//      })
+//      var dateConst = 1.0/(count + 1);
+//      var priority = dateConst*datePoint;
+//      if (this.timeNeed != -1) ({
+//          priority = priority + timePoint*dateConst*0.8
+//      })
+//      if (this.difficulty != -1) ({
+//          priority = priority + difPoint*dateConst*0.5
+//      })
+//      if (this.percent != -1) ({
+//          priority = priority + perPoint*dateConst*0.8
+//      })
+//      if (this.core != -1) ({
+//          priority = priority + corePoint*dateConst*0.3
+//      })
+//      if (this.interest != -1) ({
+//          priority = priority + intPoint*dateConst*0.9
+//      })
+//      if (this.predictable != -1) ({
+//          priority = priority + predPoint*dateConst*0.16
+//      })
+//      this.priority = priority;
+//      return priority;
+//  }
+
+var dog = new Task({
+    name: "math",
+    timeNeed: 2,
+    difficulty: 1,
+    percent: 5,
+    core: 3,
+    interest: 4,
+    predictable: 9
+});
+
+function getPriority (item) {
     var timePoint, datePoint, difPoint, perPoint, corePoint, intPoint, predPoint;
     var count = 0;
-    datePoint = Math.pow(2, this.get('dateDue') - Date.now)
-    if (Task.get('timeNeed') != -1) ({
-        timePoint = Task.get('timeNeed'),
+    datePoint = 10
+    if (item.timeNeed != -1) {
+        timePoint = item.timeNeed,
         count = count + 0.8
-    })
-    if (Task.get('difficulty') != -1) ({
-        timePoint = Task.get('difficulty'),
+     }
+     if (item.difficulty != -1) {
+        difPoint = item.difficulty,
         count = count + 0.5
-    })
-    if (Task.get('percent') != -1) ({
-        timePoint = Task.get('percent'),
-        count = count + 0.8
-    })
-    if (Task.get('core') != -1) ({
-        timePoint = Task.get('core'),
-        count = count + 0.3
-    })
-    if (Task.get('interest') != -1) ({
-        timePoint = Task.get('interest'),
-        count = count + 0.9
-    })
-    if (Task.get('predictable') != -1) ({
-        timePoint = Task.get('predictable'),
-        count = count + 0.3
-    })
-    var dateConst = 1.0/(count + 1);
-    var priority = dateConst*datePoint;
-    if (Task.get('timeNeed') != -1) ({
-        priority = priority + timePoint*dateConst*0.8
-    })
-    if (Task.get('difficulty') != -1) ({
-        priority = priority + difPoint*dateConst*0.5
-    })
-    if (Task.get('percent') != -1) ({
-        priority = priority + perPoint*dateConst*0.8
-    })
-    if (Task.get('core') != -1) ({
-        priority = priority + corePoint*dateConst*0.3
-    })
-    if (Task.get('interest') != -1) ({
-        priority = priority + intPoint*dateConst*0.9
-    })
-    if (Task.get('predictable') != -1) ({
-        priority = priority + predPoint*dateConst*0.16
-    })
+     }
+     if (item.percent != -1) {
+         perPoint = item.percent,
+         count = count + 0.8
+     }
+     if (item.core != -1) {
+         corePoint = item.core,
+         count = count + 0.3
+     }
+     if (item.interest != -1) {
+         intPoint = item.interest,
+         count = count + 0.9
+     }
+     if (item.predictable != -1) {
+         predPoint = item.predictable,
+         count = count + 0.3
+     }
+     var dateConst = 1.0/(count + 1);
+     var priority = dateConst*datePoint;
+     if (item.timeNeed != -1) {
+         priority = priority + timePoint*dateConst*0.8
+     }
+     if (item.difficulty != -1) {
+         priority = priority + difPoint*dateConst*0.5
+     }
+     if (item.percent != -1) {
+         priority = priority + perPoint*dateConst*0.8
+     }
+     if (item.core != -1) {
+         priority = priority + corePoint*dateConst*0.3
+     }
+     if (item.interest != -1) {
+         priority = priority + intPoint*dateConst*0.9
+     }
+     if (item.predictable != -1) {
+         priority = priority + predPoint*dateConst*0.16
+         console.log(priority)
+     }
+     item.priority = priority;
+     console.log(priority);
+     return priority;
 }
+  
+getPriority(dog);
 
-//module.exports = ToDo = mongoose.model('todo', TaskSchema)
+module.exports = ToDo = mongoose.model('todo', TaskSchema)
