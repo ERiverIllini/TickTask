@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 //const path = require('path');
 
-const Todo = require('./routes/api/Todo');
-
 const app = express();
 
 // Bodyparser Middleware
