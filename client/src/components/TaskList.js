@@ -6,13 +6,11 @@ import uuid from 'uuid';
 class TaskList extends Component {
     state = {
         tasks: [
-            { id: uuid(), name: 'CS196', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2' },
-            { id: uuid(), name: 'CS126', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2' },
-            { id: uuid(), name: 'MATH241', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  },
-            { id: uuid(), name: 'TickTask', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  },
+            { id: uuid(), name: 'CS196 - Project', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2' },
+            { id: uuid(), name: 'CS125 - MP', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2' },
+            { id: uuid(), name: 'MATH241 - WebAssign', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  },
             { id: uuid(), name: 'It hurts', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  },
-            { id: uuid(), name: 'Im so stressed help me please', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  },
-            { id: uuid(), name: 'SomethingElse', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  }
+            { id: uuid(), name: 'Im so stressed help me please', timeNeed: '1', difficulty: '2', percent: '5', core: '1', interest: '1', predictable: '2'  }
         ]
     }
 

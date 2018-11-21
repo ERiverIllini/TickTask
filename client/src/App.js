@@ -3,6 +3,7 @@ import {Container, ListGroup, ListGroupItem, ListGroupItemHeading, Button} from 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import AppNavbar from './components/AppNavbar';
 import TaskList from './components/TaskList';
 import SideBar from './components/SideBar';
 
@@ -15,9 +16,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Container  className="SideBar">
+				<AppNavbar/>
+				{/* <Container  className="SideBar">
 				<SideBar />
-				</Container>
+				</Container> */}
 				<Container className="Task">
 					<h2>Task Assignerç</h2>
 					<TaskList />
