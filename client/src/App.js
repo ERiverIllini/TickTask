@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Container, ListGroup, ListGroupItem, ListGroupItemHeading, Button} from 'reactstrap';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AppNavbar from './components/AppNavbar';
@@ -11,24 +14,25 @@ import SideBar from './components/SideBar';
 
 
 class App extends Component {
-
-
 	render() {
 		return (
-			<div className="App">
-				<AppNavbar/>
-				{/* <Container  className="SideBar">
-				<SideBar />
-				</Container> */}
-				<Container className="Task">
-					<h2>Task Assignerç</h2>
-					<TaskList />
-				</Container>
-				<Container className="Additional">
-					<h1>Calendar</h1>
-					<iframe src="https://calendar.google.com/calendar/embed?src=qimsathhev6lc67eh43oeko30c%40group.calendar.google.com&ctz=America%2FChicago" className="Calendar"></iframe>
-				</Container>
-			</div>
+			<Provider store={store}>
+			{/* <Provider> */}
+				<div className="App">
+					<AppNavbar/>
+					{/* <Container  className="SideBar">
+					<SideBar />
+					</Container> */}
+					<Container className="Task">
+						<h2>Task Assignerç</h2>
+						<TaskList />
+					</Container>
+					<Container className="Additional">
+						<h1>Calendar</h1>
+						<iframe src="https://calendar.google.com/calendar/embed?src=qimsathhev6lc67eh43oeko30c%40group.calendar.google.com&ctz=America%2FChicago" className="Calendar"></iframe>
+					</Container>
+				</div>
+			</Provider>
 		);
   	}
 }
