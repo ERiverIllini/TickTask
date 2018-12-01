@@ -33,7 +33,13 @@ class TaskModal extends Component {
 
         const newTask = {
             id: uuid(),
-            name: this.state.name
+            name: this.state.name,
+            timeNeed: this.state.timeNeed,
+            difficulty: this.state.difficulty,
+            percent: this.state.percent,
+            core: this.state.core,
+            interest: this.state.interest,
+            predictable: this.state.predictable
         }
 
         this.props.addTask(newTask);
@@ -62,7 +68,51 @@ class TaskModal extends Component {
                                     type="text"
                                     name="name"
                                     id="task"
-                                    placeholder="Add new Task"
+                                    placeholder="Enter Task"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="text"
+                                    name="timeNeed"
+                                    id="task"
+                                    placeholder="Enter Time Needed"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="text"
+                                    name="difficulty"
+                                    id="task"
+                                    placeholder="Enter Difficulty"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="text"
+                                    name="percent"
+                                    id="task"
+                                    placeholder="Enter percent of grade"
+                                    onChange={this.onChange}
+                                />
+                                <Label>
+                                    <Input
+                                        type="checkbox"
+                                        name="core"
+                                        id="task"
+                                        onChange={this.onChange}
+                                    />{''}
+                                    Core
+                                </Label>
+                                <Input
+                                    type="text"
+                                    name="interest"
+                                    id="task"
+                                    placeholder="Enter 1 if this something you care about, 0 otherwise"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="text"
+                                    name="predictable"
+                                    id="task"
+                                    placeholder="Enter 1 if assignments like this take the amount of time you expect them to, 0 otherwise"
                                     onChange={this.onChange}
                                 />
                                 <Button 
