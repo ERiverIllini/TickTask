@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import uuid from 'uuid';
 import { connect } from 'react-redux';
-import { getTasks } from '../actions/taskActions';
+import { getTasks, deleteTask } from '../actions/taskActions';
 import PropTypes from 'prop-types';
 
 class TaskList extends Component {
@@ -12,11 +11,15 @@ class TaskList extends Component {
       this.props.getTasks();
     }
 
+    onDeleteClick = (id) => {
+      this.props.deleteTask(id);
+    }
+
     render() {
         const { tasks } = this.props.task;
         return (
           <Container>
-            <Button
+            {/* <Button
               color="dark"
               style={{marginBottom: '2rem'}}
               className = "side-bar-btn"
@@ -36,7 +39,7 @@ class TaskList extends Component {
               }}
             >
               Add Task
-            </Button>
+            </Button> */}
             <ListGroup>
               <TransitionGroup className="shopping-list">
                 {tasks.map(({ id, name }) => (
@@ -47,11 +50,7 @@ class TaskList extends Component {
                         className="remove-btn float-right"
                         color="success"
                         size="sm"
-                        onClick={() => {
-                          this.setState(state => ({
-                            tasks: state.tasks.filter(task => task.id !== id)
-                          }));
-                        }}
+                        onClick={this.onDeleteClick.bind(this, id)}
                       >
                         &times;
                       </Button>
@@ -74,4 +73,7 @@ const mapStateToProps = (state) => ({
   task: state.task
 });
 
-export default connect(mapStateToProps, { getTasks })(TaskList);
+export default connect(
+  mapStateToProps,
+  { getTasks, deleteTask }
+)(TaskList);

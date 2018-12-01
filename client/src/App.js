@@ -9,6 +9,7 @@ import './App.css';
 import AppNavbar from './components/AppNavbar';
 import TaskList from './components/TaskList';
 import SideBar from './components/SideBar';
+import TaskModal from './components/TaskModal'
 
 
 
@@ -23,6 +24,8 @@ class App extends Component {
 					{/* <Container  className="SideBar">
 					<SideBar />
 					</Container> */}
+					<Container>
+						<TaskModal />
 					<Container className="Task">
 						<h2>Task Assignerç</h2>
 						<TaskList />
@@ -30,6 +33,7 @@ class App extends Component {
 					<Container className="Additional">
 						<h1>Calendar</h1>
 						<iframe src="https://calendar.google.com/calendar/embed?src=qimsathhev6lc67eh43oeko30c%40group.calendar.google.com&ctz=America%2FChicago" className="Calendar"></iframe>
+					</Container>
 					</Container>
 				</div>
 			</Provider>
