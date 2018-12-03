@@ -21,9 +21,6 @@ class App extends Component {
 			{/* <Provider> */}
 				<div className="App">
 					<AppNavbar/>
-					{/* <Container  className="SideBar">
-					<SideBar />
-					</Container> */}
 					<Container>
 						<TaskModal />
 					<Container className="Task">
@@ -31,7 +28,7 @@ class App extends Component {
 						<TaskList />
 					</Container>
 					<Container className="Additional">
-						<h1>Calendar</h1>
+						<h2>Calendar</h2>
 						<iframe src="https://calendar.google.com/calendar/embed?src=qimsathhev6lc67eh43oeko30c%40group.calendar.google.com&ctz=America%2FChicago" className="Calendar"></iframe>
 					</Container>
 					</Container>
@@ -51,10 +48,15 @@ TODO Add Sidebar functionality
 
 /*
 Background color
+Task background
 Category buttons
 Checkbox buttons left side 
 Checkbox buttons fill box
+Logout button
+Fix modal UI and types
+New modal for when not to assign times
 */
+
 /*
 Add button
 Google calendar

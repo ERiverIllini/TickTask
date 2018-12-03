@@ -11,7 +11,6 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addTask } from '../actions/taskActions';
-import uuid from 'uuid';
 class TaskModal extends Component {
     state = {
         modal: false,
@@ -32,8 +31,9 @@ class TaskModal extends Component {
         e.preventDefault();
 
         const newTask = {
-            id: uuid(),
+            availability: this.state.availability,
             name: this.state.name,
+            dateDue: this.state.dateDue,
             timeNeed: this.state.timeNeed,
             difficulty: this.state.difficulty,
             percent: this.state.percent,
@@ -66,53 +66,65 @@ class TaskModal extends Component {
                                 <Label for="task">Task</Label>
                                 <Input
                                     type="text"
+                                    name="availability"
+                                    id="task"
+                                    placeholder="Enter Availibility"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="text"
                                     name="name"
                                     id="task"
                                     placeholder="Enter Task"
                                     onChange={this.onChange}
                                 />
                                 <Input
-                                    type="text"
+                                    type="date"
+                                    name="dateDue"
+                                    id="task"
+                                    placeholder="Enter Date Due"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="number"
                                     name="timeNeed"
                                     id="task"
                                     placeholder="Enter Time Needed"
                                     onChange={this.onChange}
                                 />
                                 <Input
-                                    type="text"
+                                    type="number"
                                     name="difficulty"
                                     id="task"
                                     placeholder="Enter Difficulty"
                                     onChange={this.onChange}
                                 />
                                 <Input
-                                    type="text"
+                                    type="number"
                                     name="percent"
                                     id="task"
                                     placeholder="Enter percent of grade"
                                     onChange={this.onChange}
                                 />
-                                <Label>
-                                    <Input
-                                        type="checkbox"
-                                        name="core"
-                                        id="task"
-                                        onChange={this.onChange}
-                                    />{''}
-                                    Core
-                                </Label>
                                 <Input
-                                    type="text"
-                                    name="interest"
+                                    type="number"
+                                    name="core"
                                     id="task"
-                                    placeholder="Enter 1 if this something you care about, 0 otherwise"
+                                    placeholder="Enter 0 to 10 depending on how much it matters to your core curriculum"
                                     onChange={this.onChange}
                                 />
                                 <Input
-                                    type="text"
+                                    type="number"
+                                    name="interest"
+                                    id="task"
+                                    placeholder="Enter 0 to 10 depending on how much you care"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="number"
                                     name="predictable"
                                     id="task"
-                                    placeholder="Enter 1 if assignments like this take the amount of time you expect them to, 0 otherwise"
+                                    placeholder="Number from 0 to 10 depending on how predictable it is"
                                     onChange={this.onChange}
                                 />
                                 <Button 

@@ -19,38 +19,17 @@ class TaskList extends Component {
         const { tasks } = this.props.task;
         return (
           <Container>
-            {/* <Button
-              color="dark"
-              style={{marginBottom: '2rem'}}
-              className = "side-bar-btn"
-              onClick={() => {
-                const name = prompt('Enter Task');
-                const timeNeed = prompt('Enter Time Needed');
-                const difficulty = prompt('Enter Difficulty');
-                const percent = prompt('Enter percent of grade');
-                const core = prompt('Enter 1 if core class, 0 otherwise');
-                const interest = prompt('Enter 1 if this something you care about, 0 otherwise');
-                const predictable = prompt('Enter 1 if assignments like this take the amount of time you expect them to, 0 otherwise');
-                if(name) {
-                  this.setState(state => ({
-                    tasks: [...state.tasks, { id: uuid(), name, timeNeed, difficulty, percent, core, interest, predictable}]
-                  }));
-                }
-              }}
-            >
-              Add Task
-            </Button> */}
             <ListGroup>
               <TransitionGroup className="shopping-list">
-                {tasks.map(({ id, name }) => (
-                  <CSSTransition key={id} timeout={500} classNames="fade">
+                {tasks.map(({ _id, name }) => (
+                  <CSSTransition key={_id} timeout={500} classNames="fade">
                     <ListGroupItem>
                       {name}
                       <Button
                         className="remove-btn float-right"
-                        color="success"
+                        color="danger"
                         size="sm"
-                        onClick={this.onDeleteClick.bind(this, id)}
+                        onClick={this.onDeleteClick.bind(this, _id)}
                       >
                         &times;
                       </Button>
