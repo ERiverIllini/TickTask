@@ -125,3 +125,6 @@ function getPriority (item) {
      }
      item.priority = priority;
 }
+
+module.exports = Todo = mongoose.model('Todo', TaskSchema);
+//module.exports = User = mongoose.model('User', UserSchema);
