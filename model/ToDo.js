@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 //Create schema for a new task
 const TaskSchema = new Schema({
+    availability: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -34,98 +38,14 @@ const TaskSchema = new Schema({
     predictable: {
         type: Number,
         default: -1
+    },
+    priority: {
+        type: Number,
+        default: -1
     }
 });
 
 var Task = mongoose.model('Task', TaskSchema);
-
-// TaskSchema.methods.getPriority = function getPriority(cb) {
-//      var timePoint, datePoint, difPoint, perPoint, corePoint, intPoint, predPoint;
-//      var count = 0;
-//      datePoint = Math.pow(2, this.dateDue - Date.now)
-//      if (this.timeNeed != -1) ({
-//          timePoint = this.timeNeed,
-//          count = count + 0.8
-//      })
-//      if (this.difficulty != -1) ({
-//          difPoint = this.difficulty,
-//          count = count + 0.5
-//      })
-//      if (this.percent != -1) ({
-//          perPoint = this.percent,
-//          count = count + 0.8
-//      })
-//      if (this.core != -1) ({
-//          corePoint = this.core,
-//          count = count + 0.3
-//      })
-//      if (this.interest != -1) ({
-//          intPoint = this.interest,
-//          count = count + 0.9
-//      })
-//      if (this.predictable != -1) ({
-//          perPoint = this.predictable,
-//          count = count + 0.3
-//      })
-//      var dateConst = 1.0/(count + 1);
-//      var priority = dateConst*datePoint;
-//      if (this.timeNeed != -1) ({
-//          priority = priority + timePoint*dateConst*0.8
-//      })
-//      if (this.difficulty != -1) ({
-//          priority = priority + difPoint*dateConst*0.5
-//      })
-//      if (this.percent != -1) ({
-//          priority = priority + perPoint*dateConst*0.8
-//      })
-//      if (this.core != -1) ({
-//          priority = priority + corePoint*dateConst*0.3
-//      })
-//      if (this.interest != -1) ({
-//          priority = priority + intPoint*dateConst*0.9
-//      })
-//      if (this.predictable != -1) ({
-//          priority = priority + predPoint*dateConst*0.16
-//      })
-//      this.priority = priority;
-//      return priority;
-//  }
-
-//Sample Task
-var dog = new Task({
-    name: "dog",
-    dateDue: new Date(2018, 11, 10),
-    timeNeed: 2,
-    difficulty: 1,
-    percent: 5,
-    core: 3,
-    interest: 4,
-    predictable: 9
-});
-
-var cat = new Task({
-    name: "cat",
-    dateDue: new Date(2018, 11, 10),
-    timeNeed: 5,
-    difficulty: 5,
-    percent: 5,
-    core: 9,
-    interest: 5,
-    predictable: 9
-});
-
-var fish = new Task({
-    name: "fish",
-    dateDue: new Date(2018, 11, 10),
-    timeNeed: 1,
-    difficulty: 1,
-    percent: 1,
-    core: 1,
-    interest: 1,
-    predictable: 9
-});
-
-var items = [dog, cat];
 
 function getPriority (item) {
     //Points out of 10 for each variable
@@ -184,28 +104,4 @@ function getPriority (item) {
          priority = priority + predPoint*dateConst*0.16
      }
      item.priority = priority;
-     return priority;
 }
-
-//Sets up priority property in schema
-getPriority(dog);
-getPriority(cat);
-
-//Inserts from lowest priority to highest
-function insert (taskArray, newTask) {
-    var priority = getPriority(newTask);
-    for (var i = 0; i < taskArray.length; i++) {
-        var instPriority = getPriority(taskArray[i]);
-        if (instPriority > priority) {
-            taskArray.splice(i,0,newTask);
-            return;
-        }
-    }
-    taskArray.push(newTask);
-}
-
-//Tests
-insert(items, fish);
-//console.log(items[0].priority);
-//console.log(items[1].priority);
-//console.log(items[2].priority);
