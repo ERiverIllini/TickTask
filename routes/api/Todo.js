@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+//const firebase = require('firebase');
+//var app = firebase.initializeApp({ ... });
+
 // Todo Model
 const Todo = require('../../model/ToDo');
 
@@ -9,7 +12,7 @@ const Todo = require('../../model/ToDo');
 //@access Public
 router.get('/', (req, res) => {
     ToDo.find()
-        .sort({ dateDue: -1 })
+        .sort({ priority: -1 })
         .then(Todo => res.json(Todo))
 });
 
@@ -25,10 +28,19 @@ router.post('/', (req, res) => {
         percent: req.body.percent,
         core: req.body.core,
         interest: req.body.interest,
-        predictable: req.body.predictable
+        predictable: req.body.predictable,
+        priority: getPriority(newTodo)
     });
-
-    newTodo.save().then();
+    newTodo.save().then(item => res.json(item));
 });
+
+//@route DELETE api/Todo/:id
+//@desc Delete a Post
+//@access Public
+router.delete('/:id', (req, res) => {
+    ToDo.findById(req.params.id)
+      .then(Todo => Todo=remove().then(() => res.json({ success: true })))
+      .catch(err => res.status(404).json({ success: false }));
+  });
 
 module.exports = router;

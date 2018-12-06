@@ -8,20 +8,19 @@ body{
   color: #212121;
   border-color: #BDBDBD;
 }
-.SideBar{
-  background: white;
-  display: inline-block;
-  width: 25%;
-}
+
 .Task{
   /* height: 50%; */
   background: #455A64;
+  /* background: #607D8B */
   overflow-y: scroll;
-  padding-bottom: 2rem
+  padding-bottom: 2rem;
+  border-radius: 25px;
 }
 .Additional{
   background: #455A64;
   overflow-y: scroll;
+  border-radius: 25px;
 }
 
 .Calendar{
