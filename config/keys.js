@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI: 'mongodb://<dbuser>:<dbpassword>@ds137483.mlab.com:37483/ticktask'
+    mongoURI: 'mongodb://default:ticktask1@ds145245.mlab.com:45245/ticktask'
   };
