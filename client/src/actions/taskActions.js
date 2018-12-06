@@ -15,7 +15,7 @@ export const getTasks = () => dispatch => {
 
 export const deleteTask = (id) => dispatch => {
     axios
-        .delete(`/api/items/${id}`).then(res => 
+        .delete(`/api/ToDo/${id}`).then(res => 
             dispatch({
                 type: DELETE_TASK,
                 payload: id
@@ -25,7 +25,7 @@ export const deleteTask = (id) => dispatch => {
 
 export const addTask = (task) => dispatch => {
     axios
-        .post('api/Todo', task)
+        .post('api/ToDo', task)
         .then(res => 
             dispatch({
                 type: ADD_TASK,

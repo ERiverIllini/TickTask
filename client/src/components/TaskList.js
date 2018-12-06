@@ -13,7 +13,7 @@ class TaskList extends Component {
 
     onDeleteClick = (id) => {
       this.props.deleteTask(id);
-    }
+    };
 
     render() {
         const { tasks } = this.props.task;

@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Todo Model
 const ToDo = require('../../model/ToDo');
+var getPriority = require('../../model/getPriority');
 
 //@route GET api/Todo
 //@desc Get ALL Todo
@@ -29,8 +30,9 @@ router.post('/', (req, res) => {
         core: req.body.core,
         interest: req.body.interest,
         predictable: req.body.predictable,
-        priority: getPriority(newTodo)
+        priority: -1
     });
+    getPriority(newToDo);
     newToDo.save().then(ToDo => res.json(ToDo));
 });
 
@@ -39,8 +41,8 @@ router.post('/', (req, res) => {
 //@access Public
 router.delete('/:id', (req, res) => {
     ToDo.findById(req.params.id)
-      .then(ToDo => ToDo=remove().then(() => res.json({ success: true })))
+      .then(ToDo => ToDo.remove().then(() => res.json({ success: true })))
       .catch(err => res.status(404).json({ success: false }));
-  });
+});
 
 module.exports = router;
