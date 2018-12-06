@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, ListGroup, ListGroupItem, ListGroupItemHeading, Button} from 'reactstrap';
+import {Container} from 'reactstrap';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -8,8 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AppNavbar from './components/AppNavbar';
 import TaskList from './components/TaskList';
-import SideBar from './components/SideBar';
-import TaskModal from './components/TaskModal'
+import TaskModal from './components/TaskModal';
 
 
 
@@ -18,7 +17,6 @@ class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-			{/* <Provider> */}
 				<div className="App">
 					<AppNavbar/>
 					<Container>
@@ -39,12 +37,6 @@ class App extends Component {
 }
 
 export default App;
-
-/* 
-TODO Add 3 seperate containers
-TODO Add Sidebar CSS
-TODO Add Sidebar functionality
-*/
 
 /*
 Background color

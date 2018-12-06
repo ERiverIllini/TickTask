@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+//const firebase = require('firebase');
+//var app = firebase.initializeApp({ ... });
+
 // Todo Model
 const Todo = require('../../model/ToDo');
 

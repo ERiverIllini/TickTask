@@ -45,6 +45,26 @@ const TaskSchema = new Schema({
     }
 });
 
+//Create schema for a new user
+const UserSchema = new Schema({
+    id: {
+        type: Number,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    sleepTimeStart: {
+        type: Date,
+        default: new Date("2018-12-10T8:00:00Z")
+    },
+    sleepTimeEnd: {
+        type: Date,
+        default: new Date("2018-12-10T20:00:00Z")
+    }
+})
+
 var Task = mongoose.model('Task', TaskSchema);
 
 function getPriority (item) {

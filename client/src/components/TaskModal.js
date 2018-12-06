@@ -66,18 +66,20 @@ class TaskModal extends Component {
                                 <Label for="task">Task</Label>
                                 <Input
                                     type="text"
+                                    name="name"
+                                    id="task"
+                                    placeholder="Enter Task Name"
+                                    onChange={this.onChange}
+                                />
+                                <Label for="availability">Availibility</Label>
+                                <Input
+                                    type="text"
                                     name="availability"
                                     id="task"
                                     placeholder="Enter Availibility"
                                     onChange={this.onChange}
                                 />
-                                <Input
-                                    type="text"
-                                    name="name"
-                                    id="task"
-                                    placeholder="Enter Task"
-                                    onChange={this.onChange}
-                                />
+                                <Label for="dateDue">Due Date</Label>
                                 <Input
                                     type="date"
                                     name="dateDue"
@@ -85,6 +87,7 @@ class TaskModal extends Component {
                                     placeholder="Enter Date Due"
                                     onChange={this.onChange}
                                 />
+                                <Label>Additional Details</Label>
                                 <Input
                                     type="number"
                                     name="timeNeed"
