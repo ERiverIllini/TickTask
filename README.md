@@ -13,19 +13,19 @@ npm install
 npm install -prefix client
 ```
 
-Start server
+## Start server
 
 ```javascript
 npm run server
 ```
 
-Start client
+## Start client
 
 ```javascript
 npm start -prefix client
 ```
 
-Start both
+## Start both
 
 ```javascript
 npm run dev
