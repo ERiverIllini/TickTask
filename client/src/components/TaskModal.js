@@ -90,6 +90,7 @@ class TaskModal extends Component {
                                 <Label>Additional Details</Label>
                                 <Input
                                     type="number"
+                                    min="0"
                                     name="timeNeed"
                                     id="task"
                                     placeholder="Enter Time Needed"
@@ -97,6 +98,7 @@ class TaskModal extends Component {
                                 />
                                 <Input
                                     type="number"
+                                    min="0"
                                     name="difficulty"
                                     id="task"
                                     placeholder="Enter Difficulty"
@@ -104,6 +106,7 @@ class TaskModal extends Component {
                                 />
                                 <Input
                                     type="number"
+                                    min="0"
                                     name="percent"
                                     id="task"
                                     placeholder="Enter percent of grade"
@@ -111,6 +114,7 @@ class TaskModal extends Component {
                                 />
                                 <Input
                                     type="number"
+                                    min="0"
                                     name="core"
                                     id="task"
                                     placeholder="Enter 0 to 10 depending on how much it matters to your core curriculum"
@@ -118,6 +122,7 @@ class TaskModal extends Component {
                                 />
                                 <Input
                                     type="number"
+                                    min="0"
                                     name="interest"
                                     id="task"
                                     placeholder="Enter 0 to 10 depending on how much you care"
@@ -125,6 +130,7 @@ class TaskModal extends Component {
                                 />
                                 <Input
                                     type="number"
+                                    min="0"
                                     name="predictable"
                                     id="task"
                                     placeholder="Number from 0 to 10 depending on how predictable it is"

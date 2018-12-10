@@ -37,20 +37,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-Background color
-Task background
-Category buttons
-Checkbox buttons left side 
-Checkbox buttons fill box
-Logout button
-Fix modal UI and types
-New modal for when not to assign times
-*/
-
-/*
-Add button
-Google calendar
-Call priority function and sort tasks
-*/
