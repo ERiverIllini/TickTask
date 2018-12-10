@@ -13,7 +13,7 @@ class TaskList extends Component {
 
     onDeleteClick = (id) => {
       this.props.deleteTask(id);
-    }
+    };
 
     render() {
         const { tasks } = this.props.task;
@@ -21,7 +21,9 @@ class TaskList extends Component {
           <Container>
             <ListGroup>
               <TransitionGroup className="shopping-list">
-                {tasks.map(({ _id, name }) => (
+                {tasks
+                .sort((a, b) => a.priority < b.priority)
+                .map(({ _id, name }) => (
                   <CSSTransition key={_id} timeout={500} classNames="fade">
                     <ListGroupItem>
                       {name}

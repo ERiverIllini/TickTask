@@ -4,9 +4,11 @@
   "description": "This is the main page. Hello!",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server": "nodemon server.js",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
@@ -23,7 +25,11 @@
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
+<<<<<<< HEAD
     "firebaseui": "^3.4.1",
+=======
+    "googleapis": "^27.0.0",
+>>>>>>> 75c944f92338e9a0b557c28f8d03a56ab2f346d3
     "mongoose": "^5.3.15"
   },
   "devDependencies": {

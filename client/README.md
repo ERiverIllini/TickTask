@@ -1,10 +1,16 @@
+# Installation
 
 ```javascript
-npm i bootstrap reactstrap react-transition-group react-sidebar redux react-redux redux-thunk
+npm install prefix -client
 ```
+
 ```javascript
 npm start
 ```
+
+## TODO
+
+* Have new items automatically insert to correct position
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

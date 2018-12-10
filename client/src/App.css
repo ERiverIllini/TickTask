@@ -10,13 +10,13 @@ body{
 }
 
 .Task{
-  /* height: 50%; */
   background: #455A64;
-  /* background: #607D8B */
   overflow-y: scroll;
-  padding-bottom: 2rem;
   border-radius: 25px;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
+
 .Additional{
   background: #455A64;
   overflow-y: scroll;
