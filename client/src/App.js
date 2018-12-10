@@ -22,12 +22,12 @@ class App extends Component {
 					<Container>
 						<TaskModal />
 					<Container className="Task">
-						<h2>Task Assignerç</h2>
+						<h2>Task Assigner</h2>
 						<TaskList />
 					</Container>
 					<Container className="Additional">
 						<h2>Calendar</h2>
-						<iframe src="https://calendar.google.com/calendar/embed?src=qimsathhev6lc67eh43oeko30c%40group.calendar.google.com&ctz=America%2FChicago" className="Calendar"></iframe>
+						<iframe title="calendar" src="https://calendar.google.com/calendar/embed?src=qimsathhev6lc67eh43oeko30c%40group.calendar.google.com&ctz=America%2FChicago" className="Calendar"></iframe>
 					</Container>
 					</Container>
 				</div>
