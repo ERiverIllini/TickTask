@@ -1,10 +1,8 @@
-@import "palette.css";
 body{
   background: #607D8B;
 }
 .App{
   width: 100vw;
-  /* height: 150vh; */
   color: #212121;
   border-color: #BDBDBD;
 }
