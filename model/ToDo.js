@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 //Create schema for a new task
 const TaskSchema = new Schema({
     availability: {
-        type: String
+        type: String,
+        required: true
     },
     name: {
         type: String,
