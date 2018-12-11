@@ -1,35 +1,63 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyD58g_fm3ltq9XOmSn1Vgs1HzTCRmOGvfk",
-                authDomain: "tick-task-db50f.firebaseapp.com",
-                databaseURL: "https://tick-task-db50f.firebaseio.com",
-                projectId: "tick-task-db50f",
-                storageBucket: "tick-task-db50f.appspot.com",
-                messagingSenderId: "455444650561"
-              };
-            firebase.initializeApp(config);
-        </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
-        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <link rel="stylesheet" type="text/css" href="LoginPageDesign.css">
+</head>
+<body id="LoginForm">
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+    <h1>Welcome to My Awesome App</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+    <script src="firebase.js"></script>
+    <script src="login.js"></script>
 
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-
-
-        <meta name="google-signin-scope" content="profile email">
-        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-        <link rel="stylesheet" type="text/css" href="LoginPageDesign.css">
-    </head>
+    <div class="container">
+        <div class="login-form">
+        <div class="main-div">
+        <div class="panel">
+           <h2>Tick-Task</h2>
+           <p>Please enter your username and password.</p>
+           </div>
+            <form id="Login">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Username">
+                </div>
+        
+                <div class="form-group">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="forgot">
+                <a href="reset.html">Forgot password?</a>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-primary">Signup</button>
+                </div>
+        
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+<!-- 
+<html>
+    <head></head>
   <body id="LoginForm">
   <div id="firebaseui-auth-container"></div>
   <div id="loader"><Loading...</div>
@@ -97,3 +125,4 @@
   </body>
 
   </html>
+-->
