@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyD58g_fm3ltq9XOmSn1Vgs1HzTCRmOGvfk",
+                authDomain: "tick-task-db50f.firebaseapp.com",
+                databaseURL: "https://tick-task-db50f.firebaseio.com",
+                projectId: "tick-task-db50f",
+                storageBucket: "tick-task-db50f.appspot.com",
+                messagingSenderId: "455444650561"
+              };
+            firebase.initializeApp(config);
+        </script>
+
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+        <link rel="stylesheet" type="text/css" href="LoginPageDesign.css">
+    </head>
+  <body id="LoginForm">
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+  <div class="container">
+  <h1 class="title">Tick-Task</h1>
+  <div class="login-form">
+  <div class="main-div">
+      <div class="panel">
+     <h2>Admin Login</h2>
+     <p>Please enter your username and password. BlahBlah</p>
+     </div>
+      <form id="Login">
+          <div class="form-group">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Username">
+          </div>
+  
+          <div class="form-group">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+          <div class="forgot">
+          <a href="reset.html">Forgot password?</a>
+          </div>
+          
+          <div>
+              <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+          
+          <div>
+              <button type="submit" class="btn btn-primary">Signup</button>
+          </div>
+  
+      </form>
+      </div>
+  </div></div></div>
+  
+  <script>
+    ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ],
+    });
+
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+
+  </script>
+  
+  </body>
+
+  </html>
