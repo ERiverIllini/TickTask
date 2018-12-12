@@ -10,12 +10,13 @@ import AppNavbar from './components/AppNavbar';
 import TaskList from './components/TaskList';
 import TaskModal from './components/TaskModal';
 
+import firebase from "firebase";
 
 var mainApp = {};
 
 (function(){
-	//var firebase = app_fireBase
-var uid = null;
+	var firebase = app_fireBase;
+	var uid = null;
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 		  // User is signed in.
